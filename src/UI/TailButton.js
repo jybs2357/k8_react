@@ -1,11 +1,11 @@
 export default function TailButton({caption, color}) {
     const btColor = {
-        "blue" : "bg-blue-800"
+        "blue" : "bg-blue-800",
         "orange" : "bg-orange-800"
     };
 
     const btColorHover = {
-        "blue" : "hover:bg-blue-600"
+        "blue" : "hover:bg-blue-600",
         "orange" : "hover:bg-orange-600"
     };
 

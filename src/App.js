@@ -23,7 +23,7 @@ function App() {
       <footer className="w-full h-20
                          flex justify-center items-center
                          bg-black text-white">
-        <p>KNOU CS 이준영</p>
+        <p>KNOU Computer Science 이준영</p>
       </footer>
     </div>
   );

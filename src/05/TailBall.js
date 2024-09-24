@@ -10,10 +10,10 @@ export default function TailBall({n}) {
         <div className={`w-20 h-20 m-2
                         flex justify-center items-center
                         rounded-full
-                        ${ballcolor["b" + math.floor(n / 10)]}
+                        ${ballColor["b" + math.floor(n / 10)]}
                         text-white font-bold text-2xl
                         `}>
-        {n}
-    </div>
+            {n}
+        </div>
     )
 }
