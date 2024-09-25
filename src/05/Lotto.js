@@ -1,23 +1,36 @@
 import TailButton from "../UI/TailButton";
 import TailBall from "./TailBall";
 
-export default function Lotto() {
-    const handleClick = () => {
-        console.log("handleClick1")
-    }
+import { useState } from "react";
 
+export default function Lotto() {
+    const [tags, setTags] = useState();
+
+    const handleClick = () => {
+        let arr = [];
+        while (arr.length < 7) {
+            let n = Math.floor(Math.random() * 45) + 1;
+
+            if (!arr.includes(n)) arr.push(n);
+
+        }
+
+        const bonus = arr.splice(-1);
+        arr.sort((a, b) => a - b);
+        arr = arr.concat(bonus);
+        let tm = arr.map(item => {return <TailBall key = {"b" + item} n = {item} />});
+        tm = tm.splice(6, 0, <div className="text-3xl mx-2 font-bold" key="sp">+</div>)
+        console.log(tm)
+        setTags(tm);
+    }
+ 
     return (
         <div className="w-full">
             <div className="w-full flex justify-center items-center mb-10">
-                <TailBall n={10}/>
-                <TailBall n={20}/>
-                <TailBall n={30}/>
-                <TailBall n={40}/>
-                <TailBall n={50}/>
-                <TailBall n={60}/>
+                {tags}
             </div>
-            <div>
-                <TailButton caption='로또번호생성' color='blue' handleClick = {handleClick1}/>
+            <div className="w-full flex justify-center items-center mb-10">
+                <TailButton caption='로또번호생성' color='blue' handleClick = {handleClick}/>
             </div>
         </div>
     )
