@@ -1,4 +1,4 @@
-export default function TailButton({caption, color}) {
+export default function TailButton({caption, color, handleClick}) {
     const btColor = {
         "blue" : "bg-blue-800",
         "orange" : "bg-orange-800"
