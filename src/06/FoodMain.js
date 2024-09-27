@@ -18,8 +18,6 @@ export default function FoodMain() {
                             handleClick = {() => handleFood(item)}
                         />);
 
-    console.log(tm);
-    
     const handleFood = (item) => {
         let tm = fooddata.filter(i => i["운영주체 분류"] === item)
                             .map(i => <FoodCard obj={i} key={i.사업장명} />)

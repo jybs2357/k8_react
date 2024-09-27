@@ -2,7 +2,9 @@ import colock from "./colock.png";
 function MyClockImage() {
 
     return(
-        <img src={colock} alt="image" />
+        <div className="w-full flex justify-center items-start text-2xl font-bold">
+            { new Date().toTimeString}
+        </div>
     );
 
 }
