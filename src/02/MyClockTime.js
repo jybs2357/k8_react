@@ -8,7 +8,7 @@ function MyClockTime() {
             setCTime(new Date());
         }, 1000);
 
-        return clearInterval(tm);
+        return () => {clearInterval(tm)};
     }, []);
     return(
         <div claseName="w-full flex justify-center items-center text-2xl font-bold">
