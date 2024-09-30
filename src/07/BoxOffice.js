@@ -1,21 +1,73 @@
 import { useEffect, useState } from "react";
+import BoxOfficeTr from "./BoxOfficeTr";
 
 export default function BoxOffice() {
-    const [cnt, setCnt] = useState();
+    const [tdata, setTdata] = useState();
+    const [trs, setTrs] = useState();
 
-    const handleUp = () => {
-        setCnt(cnt + 1);
-    }
-    useEffect(() => {
+    const getFetchData = () => {
         const apiKey = process.env.REACT_APP_MV_KEY;
+        const dt = "20240929";
+
+        let url = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?`;
+        url = `${url}key=${apiKey}&targetDt=${dt}`;
+
+        fetch(url)
+            .then(resp => resp.json())
+            .then(data => setTdata(data.boxOfficeResult.dailyBoxOfficeList))
+            .catch(err => console.log(err))
+            ;
+
         console.log("apikey=", apiKey);
+        console.log(url);
+    }
+
+    const handleTrClick = (item) => {
+        console.log(item);
+    }
+
+    useEffect(() => {
+        getFetchData();
     }, []);
 
-    return (
-        <div className="h-screen flex flex-col justify-center items-center">
-            <div>
+    //fetch 데이터가 채워지면
+    useEffect(() => {
+        if (!tdata) return;
+        console.log('tdata', tdata);
+        let tm = tdata.map(item => <BoxOfficeTr
+                                    handleClick={() => handleTrClick(item)}
+                                    mv={item}
+                                    key={item.movieCd} />)
+        setTrs(tm);
+    }, [tdata]);
 
-            </div>
+
+    return (
+        <div className="w-full h-screen flex flex-col justify-center items-center">
+            <table className="w-10/12 text-sm text-left rtl:text-right text-gray-500">
+                <thead className="text-md font-bold text-white  bg-black">
+                    <tr>
+                        <th scope="col" className="px-6 py-3">
+                            순위
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            영화명
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            매출액
+                        </th>
+                        <th scope="col" claclassNamess="px-6 py-3">
+                            관객수
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                            증감율
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {trs}
+                </tbody>
+            </table>
         </div>
     )
 }
