@@ -3,6 +3,7 @@ import BoxOfficeTr from "./BoxOfficeTr";
 
 export default function BoxOffice() {
     const [tdata, setTdata] = useState();
+    const [info, setInfo] = useState();
     const [trs, setTrs] = useState();
 
     const getFetchData = () => {
@@ -22,8 +23,12 @@ export default function BoxOffice() {
         console.log(url);
     }
 
+
+
     const handleTrClick = (item) => {
         console.log(item);
+        let tm = `[${item.movieCd}] ${item.movieNm}` : 누적 관객수는 ${parseInt(item.audiCnt).toLocaleString()}입니다.;
+        setInfo(tm);
     }
 
     useEffect(() => {
@@ -67,6 +72,14 @@ export default function BoxOffice() {
                 <tbody>
                     {trs}
                 </tbody>
+                <tfoot>
+                    <tr className="bg-black text-white w-full
+                                    text-center h-10 p-2">
+                        <td colSpan={5}>text</td>
+                        {info}
+                    </tr>
+
+                </tfoot>
             </table>
         </div>
     )
