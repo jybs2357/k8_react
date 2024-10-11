@@ -3,16 +3,49 @@ import TailCard from "../UI/TailCard";
 import TailButton from "../UI/TailButton";
 
 export default function Gallery() {
+    const [tdata, setTdata] = useState([]);
+    const [tags, setTags] = useState([]);
     const val = useRef();
     
+    const getFetchData = async() => {
+        const apikey = process.env.REACT_APP_API_KEY;
+        const keyword = encodeURI(val.current.value);
+
+        let url = `https://apis.data.go.kr/B551011/PhotoGalleryService1/gallerySearchList1?serviceKey=${apikey}&numOfRows=20&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&keyword=${keyword}&_type=json`;
+        
+        const resp = await fetch(url);
+        const data = await resp.json();
+        console.log("getFetch:", data.response.body.items.item);
+        setTdata(data.response.body.items.item);
+    }
+
+
+    
+    const handleOk = () => {
+        if (val.current.value === ""){
+            alert("키워드를 입력하세요.");
+            val.current.focus();
+            return;
+        }
+
+        getFetchData();
+    }
+
     const handleCancel = () => {
         val.current.value="";
         val.current.focus();
+        setTags([]);
     }
 
     useEffect(() => {
         val.current.focus();
     }, []);
+
+    useEffect(() => {
+        // const tm = tdata.map(item => <TailCard key={item.galContentId} imgUrl={item.galWebImageUrl} title={item.galTitle} content={item.galPhotographyLocation} kw={item.galSearchKeyword} />);
+
+    }, [tdata]);
+
 
     return (
 
@@ -25,22 +58,26 @@ export default function Gallery() {
                         <input ref={val} type='text' className="w-10/12 form-input" id='kw' name='kw' />
                     </div>
                     <div className="flex justify-center lg:justify-start items-center">
-                        <TailButton caption='확인'
+                        <TailButton
+                            caption='확인'
                             color='blue'
-                            handleClick=''
-                            size='w-1/2' />
-                        <TailButton caption='취소'
+                            handleClick={handleOk}
+                            size='w-1/2'
+                        />
+                        <TailButton
+                            caption='취소'
                             color='blue'
-                            handleClick=''
-                            size='w-1/2' />
+                            handleClick={handleCancel}
+                            size='w-1/2'
+                        />
+
                     </div>
                 </div>
+            <div className="w-10/12 p-5 grid grid-col-1 lg:grid-col-2 xl:grid-col-2 lg:justify-center">
+                {tags}
             </div>
 
-            {/* <TailCard imgUrl = "http://tong.visitkorea.or.kr/cms2/website/52/2586952.jpg"
-                title = "서울빛초롱축제"
-                content = "서울특별시 종로구"
-                kw = "서울빛초롱축제, 서울특별시 종로구, 2018 하반기 기획사진, 청계천 야경, 서울 등 축제, 서울 축제"/> */}
+            </div>
         </div>
     )
 }

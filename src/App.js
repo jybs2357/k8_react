@@ -4,7 +4,7 @@ import { FaHome } from "react-icons/fa";
 // import BoxOffice from "./07/BoxOffice";
 // import MyBoxFlag from "./08/MyBoxFlag";
 // import MyRef from './10/MyRef';
-import Gallery from './11/Gallery';
+import RouteMain from './13/RouteMain';
 
 function App() {
     return (
@@ -23,9 +23,9 @@ function App() {
             <main className="w-full grow
                        flex flex-col justify-center items-center
                        overflow-y-auto">
-                <Gallery />
+                <RouteMain />
             </main>
-            <footer className="w-full h-20
+            <footer className="w-full h-20 flex-shrink-0
                          flex justify-center items-center
                          bg-black text-white">
                 <p>Korea National Open University<br />Computer Science 이준영</p>
