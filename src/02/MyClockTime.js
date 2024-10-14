@@ -4,7 +4,7 @@ function MyClockTime() {
     const [cTime, setCTime] = useState(new Date());
 
     useEffect(() => {
-        setInterval(() => {
+        const tm = setInterval(() => {
             setCTime(new Date());
         }, 1000);
 

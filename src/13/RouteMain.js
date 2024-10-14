@@ -12,7 +12,7 @@ export default function RouteMain() {
             <RouteNav />
             <Routes>
                 <Route path="/" element={<RouteHome />} />
-                <Route path="/p1/:item" element={<RoutePage1 />} />
+                <Route path="/p1/:item/:item2" element={<RoutePage1 />} />
                 <Route path="/p2" element={<RoutePage2 />} />
             </Routes>
         </div>
