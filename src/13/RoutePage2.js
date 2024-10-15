@@ -1,4 +1,5 @@
 import { useLocation, useSearchParams } from "react-router-dom";
+
 export default function RoutePage2() {
     const loc = useLocation();
     console.log(loc)
