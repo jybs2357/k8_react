@@ -1,3 +1,4 @@
+import TailButton from "../UI/TailButton";
 
 export default function FcstList() {
     return (
