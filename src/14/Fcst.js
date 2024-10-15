@@ -1,9 +1,26 @@
+import { useNavigate } from "react-router-dom";
 import TailButton from "../UI/TailButton";
 import getxy from './getxy.json';
+import { useRef } from "react-router-dom";
 
 export default function Fcst() {
     let sido = getxy.map(item => item["1단계"])
-        .map(item => <option key={item} vlaue={item}>{item}</option>);
+                    .map(item => <option key={item} vlaue={item}>{item}</option>);
+
+
+    const navigate = useNavigate();
+
+    //버튼이 눌러 졌을 때
+    const handleOk = (gubun) => {
+        if (txtDt.current.value === '') {
+            alert('날짜를 선택하세요.'
+            txtDt.current.focus();
+            return;
+        }
+        console.log(gubun);
+        const dt = txtDt.current.value.replaceAll('-', '');
+        navigate(`/fcstlist?gubun=${gubun}dt=${dt}&x=${x}&y=${y}`);
+    }
 
     return (
         <div className="w-full flex flex-col justify-center items-center">
@@ -19,7 +36,8 @@ export default function Fcst() {
                     className="form-input w-full"
                     id='txt1' />
                 <select className="form-select w-full">
-                    <option value=''>--지역을 선택하세요.--</option>
+                    <option value=''>-- 지역을 선택하세요. --</option>
+                    {sido}
                 </select>
                 <TailButton caption='초단기예보'
                     color='blue'
