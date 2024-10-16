@@ -89,7 +89,7 @@ function App() {
         <footer className='w-full h-20 flex-shrink-0
                          flex justify-center items-center
                          bg-black text-white'>
-          <p>K-digital 8기 김경민</p>
+          <p>Korea National Open University<br />Computer Science 이준영</p>
         </footer>
       </div>
     </BrowserRouter>
