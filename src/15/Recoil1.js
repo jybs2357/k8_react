@@ -1,14 +1,19 @@
 
 import Recoil2 from "./Recoil2";
 import Recoil3 from "./Recoil3";
+import { AtomN } from "./AtomN";
+import { useRecoilValue } from "recoil";
+
 
 export default function Recoil1() {
     const x = 1;
     const y = 2;
 
+    const n = useRecoilValue(AtomN);
+
     return (
         <div className="w-10/12 h-4/5 flex flex-col mt-10 p-5  bg-lime-700 text-white font-bold">
-            Recoil({x})
+            Recoil(x={x}, n={n})
             
             <div className="flex justify-center">
                 <Recoil2 y2={y}/>

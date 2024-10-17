@@ -1,17 +1,26 @@
 import TailButton from "../UI/TailButton";
 import { useState, useEffect, useRef } from "react";
 
+import { AtomN } from "./AtomN";
+import { useRecoilState } from "recoil";
+
 export default function Recoil3({x3, y3}) {
     const [x, setX] = useState(x3);
     const [y, setY] = useState(y3);
     const inRef = useRef();
 
+    const [n, setN] = useRecoilState(AtomN);
+    const []
+
+
     const handleUp = () => {
         setX(x + 1);
+        setN(n + 1);
     }
 
     const handleDwon = () => {
         setX(x - 1);
+        setN(n - 1);
     }
 
     useEffect(() => {

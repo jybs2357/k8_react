@@ -1,10 +1,10 @@
-import { RecoilRoot } from "Recoil";
+import { RecoilRoot } from "recoil";
 import Recoil1 from "./Recoil1";
 
 export default function RecoilMain() {
     return (
-        <div>
-            
-        </div>
+        <RecoilRoot>
+            <Recoil1 />
+        </RecoilRoot>
     )
 }

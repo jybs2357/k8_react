@@ -6,8 +6,8 @@ import MyClock from './02/MyClock' ;
 import MyDiv1 from './03/MyDiv1';
 // import MyList from './04/MyList';
 import Lotto from './05/Lotto';
-import FoodMain from './06/FoodMain';
-import BoxOffice from './07/BoxOffice';
+// import FoodMain from './06/FoodMain';
+// import BoxOffice from './07/BoxOffice';
 // import MyBox from './08/MyBox';
 import Traffic from './09/Traffic' ;
 // import MyRef from './10/MyRef';
@@ -37,12 +37,12 @@ function App() {
             <li className='mx-4 p-2 hover:bg-slate-700 hover:text-white rounded-md'>
               <Link to='/lotto'>로또생성기</Link>
             </li>
-            <li className='mx-4 p-2 hover:bg-slate-700 hover:text-white rounded-md'>
+            {/* <li className='mx-4 p-2 hover:bg-slate-700 hover:text-white rounded-md'>
               <Link to='/food'>푸드뱅크</Link>
-            </li>
-            <li className='mx-4 p-2 hover:bg-slate-700 hover:text-white rounded-md'>
+            </li> */}
+            {/* <li className='mx-4 p-2 hover:bg-slate-700 hover:text-white rounded-md'>
               <Link to='/box'>박스오피스</Link>
-            </li>
+            </li> */}
             <li className='mx-4 p-2 hover:bg-slate-700 hover:text-white rounded-md'>
               <Link to='/traffic'>교통사고</Link>
             </li>
@@ -66,15 +66,16 @@ function App() {
           <Routes>
             <Route path='/' element={<MyClock />} />
             <Route path='/lotto' element={<Lotto />} />
-            <Route path='/food' element={<FoodMain />} />
-            <Route path='/box' element={<BoxOffice />} />
+            {/* <Route path='/food' element={<FoodMain />} /> */}
+            {/* <Route path='/box' element={<BoxOffice />} /> */}
             <Route path='/traffic' element={<Traffic />} />
             <Route path='/gallery' element={<Gallery />} />
             <Route path='/festival' element={<Festival />} />
             <Route path='/fcst' element={<Fcst />} />
             <Route path='/fcstlist' element={<FcstList />} />
             <Route path='/MyDiv1' element={<MyDiv1 />} />
-            <Route path='/recoilMain' element={<RecoilMain />} />
+            {/* <Route path='/RecoilMain' element={<RecoilMain />} /> */}
+            <Route path='/rmain' element={<RecoilMain />} />
 
             {/* <MyList /> */}
             {/* <Lotto /> */}

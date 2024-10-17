@@ -18,7 +18,7 @@ export default function FoodCard() {
 
     return(
         <div className="w-full flex border border-slate-300 rounded-md p-5">
-            <div className="mr-5">
+            {/* <div className="mr-5">
                 <img src={objImg[obj["구분"]]} alt={obj["구분"]} />
             </div>
             <div className="flex flex-col justify-between items-start">
@@ -39,7 +39,7 @@ export default function FoodCard() {
                                 onClick={handleClick}>
                     {isShow ? obj["연락처(대표번호)"] : ""}
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
