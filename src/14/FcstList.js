@@ -22,7 +22,12 @@ export default function FcstList() {
 
     const handleSelect = () => {
         console.log(selRef.current.value);
-        data.response.items.item.category.filter(setTdata === TMP);
+        console.log(tdata);
+        const tm = tdata.filter((item) => {
+
+            return item.category === selRef.current.value;
+        });
+        console.log(tm);
     }
 
 

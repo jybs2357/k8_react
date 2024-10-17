@@ -14,8 +14,7 @@ export default function Fcst() {
     //   sido.push(getxy[i]["1단계"]) ;
     // }
 
-    const sido = getxy.map(item => <option key={item["1단계"]}
-        value={item["1단계"]}>
+    const sido = getxy.map(item => <option key={item["1단계"]} value={item["1단계"]}>
         {item["1단계"]}
     </option>);
 
@@ -58,8 +57,7 @@ export default function Fcst() {
                     ref={txtDt}
                     className="form-input w-full"
                     id='txt1' />
-                <select className="form-select w-full"
-                    ref={txtArea}>
+                <select className="form-select w-full" ref={txtArea}>
                     <option value=''>--지역을 선택하세요.</option>
                     {sido}
                 </select>

@@ -5,7 +5,6 @@ export default function MyDiv3({dn1, dn2, dn3}) {
                         bg-yellow-600 text-white font-bold">
             <div className="w-full h-10 p-5
                             flex justify-start items-center ">
-                {`${dn1} > ${dn2} > ${dn3}`}
             </div>
         </div>
     )

@@ -3,7 +3,7 @@ import { FaHome } from "react-icons/fa";
 
 // import Hello from './01/Hello' ;
 import MyClock from './02/MyClock' ;
-// import MyDiv1 from './03/MyDiv1';
+import MyDiv1 from './03/MyDiv1';
 // import MyList from './04/MyList';
 import Lotto from './05/Lotto';
 import FoodMain from './06/FoodMain';
@@ -15,6 +15,7 @@ import Gallery from './11/Gallery';
 import Festival from './12/Festival';
 import Fcst from './14/Fcst';
 import FcstList from './14/FcstList';
+import RecoilMain from './15/RecoilMain';
 
 // import RouteMain from './13/RouteMain';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
@@ -27,7 +28,7 @@ function App() {
                          flex justify-between items-center
                          bg-slate-200'>
           <p className='text-2xl font-bold p-5'>
-            K-digital 8기
+            PNU KDT
           </p>
           <ul className='flex justify-center items-center text-xl font-bold'>
             <li className='mx-4 p-2 hover:bg-slate-700 hover:text-white rounded-md'>
@@ -63,7 +64,6 @@ function App() {
                        flex flex-col items-center
                        overflow-y-auto'>
           <Routes>
-            {/* <MyDiv1 /> */}
             <Route path='/' element={<MyClock />} />
             <Route path='/lotto' element={<Lotto />} />
             <Route path='/food' element={<FoodMain />} />
@@ -73,6 +73,8 @@ function App() {
             <Route path='/festival' element={<Festival />} />
             <Route path='/fcst' element={<Fcst />} />
             <Route path='/fcstlist' element={<FcstList />} />
+            <Route path='/MyDiv1' element={<MyDiv1 />} />
+            <Route path='/recoilMain' element={<RecoilMain />} />
 
             {/* <MyList /> */}
             {/* <Lotto /> */}
