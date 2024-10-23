@@ -1,19 +1,13 @@
 export default function TailCard({ imgUrl, title, content, kw }) {
-    // let kws = [] ;
-    // if (kw.include(',')) {
-    //   kws = kw.split(',') ;
-    // } 
-    // else {
-    //   kws.push(kw) ;
-    // }
 
     const kws = kw.includes(',') ? kw.split(',') : [kw];
-    const kwTags = kws.map(item => <span key={item}
-        className="inline-flex bg-slate-200
-                                                    text-sm font-bold
-                                                    p-2 m-1 rounded-xl">
-        {item}
-    </span>);
+    const kwTags = kws.map(item =>
+        <span key={item}
+            className="inline-flex bg-slate-200
+            text-sm font-bold p-2 m-1 rounded-xl
+        ">
+            {item}
+        </span>);
     console.log(kws)
 
     return (
