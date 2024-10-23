@@ -26,7 +26,7 @@ export default function Traffic() {
         fetch(url)
             .then(resp => resp.json())
             .then(data => setTdata(data.data))
-            .catch(err => console.err(err));
+            .catch(err => console.error(err));
     }
 
     //맨처음 한번

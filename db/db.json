@@ -1,0 +1,27 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "컴퓨터 구조 개론",
+      "author": "폰 노이만"
+    },
+    {
+      "id": "2",
+      "title": "인공지능 개론",
+      "author": "앨런 튜링"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "This is a comment1.",
+      "postId": 1
+    },
+    {
+      "id": "2",
+      "body": "This is a comment2.",
+      "postId": 1
+    }
+  ]
+}
+
